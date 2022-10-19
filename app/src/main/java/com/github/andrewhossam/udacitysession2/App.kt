@@ -8,6 +8,7 @@ class App : Application() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
 
+        registerActivityLifecycleCallbacks(Lifecycle.activityLifecycle)
     }
 
 }
