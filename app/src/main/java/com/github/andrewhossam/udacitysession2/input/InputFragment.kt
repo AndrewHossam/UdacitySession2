@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
 
-    private lateinit var viewModel: InputViewModel
+//    private val viewModel: InputViewModel by lazy {
+//        ViewModelProvider(this).get(InputViewModel::class.java)
+//    }
+
+    private val viewModel: InputViewModel by viewModels()
     private lateinit var binding: FragmentInputBinding
 
     override fun onCreateView(
@@ -21,6 +26,7 @@ class InputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        viewModel.message = "Hello from input fragment"
+        viewModel.helloInputViewModel()
     }
 }
