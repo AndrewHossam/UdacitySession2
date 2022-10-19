@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@{sharedViewModel._inputTextLiveDate}"
+            android:text="@{sharedViewModel.inputTextMapper}"
             android:layout_marginHorizontal="60dp"
             android:gravity="center"
             tools:text="@tools:sample/lorem/random" />

@@ -34,8 +34,5 @@ class InputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.editTextTextPersonName.doAfterTextChanged {
-            sharedViewModel.updateText(it.toString())
-        }
     }
 }
