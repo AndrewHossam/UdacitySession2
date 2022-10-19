@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import com.github.andrewhossam.udacitysession2.SharedViewModel
 import com.github.andrewhossam.udacitysession2.databinding.FragmentOutputBinding
-import com.github.andrewhossam.udacitysession2.input.InputViewModel
 
 class OutputFragment : Fragment() {
 
-    private val viewModel: OutputViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private lateinit var binding: FragmentOutputBinding
 
@@ -24,5 +24,8 @@ class OutputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        sharedViewModel.inputTextLive.observe(viewLifecycleOwner) {
+            binding.tvOutput.text = it
+        }
     }
 }

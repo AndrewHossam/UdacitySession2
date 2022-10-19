@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import com.github.andrewhossam.udacitysession2.SharedViewModel
 import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
@@ -15,9 +18,8 @@ class InputFragment : Fragment() {
 //        ViewModelProvider(this, factory).get(InputViewModel::class.java)
 //    }
 
-    private val viewModel: InputViewModel by viewModels {
-        InputViewModel.Companion.InputViewModelFactory(requireActivity().application, "anyValue")
-    }
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+
     private lateinit var binding: FragmentInputBinding
 
     override fun onCreateView(
@@ -29,6 +31,8 @@ class InputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.helloInputViewModel()
+        binding.editTextTextPersonName.doAfterTextChanged {
+            sharedViewModel.inputTextLive.value = it.toString()
+        }
     }
 }
