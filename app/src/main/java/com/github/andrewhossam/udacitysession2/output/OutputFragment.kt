@@ -24,7 +24,7 @@ class OutputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        sharedViewModel.inputTextLive.observe(viewLifecycleOwner) {
+        sharedViewModel.inputTextLiveData.observe(viewLifecycleOwner) {
             binding.tvOutput.text = it
         }
     }

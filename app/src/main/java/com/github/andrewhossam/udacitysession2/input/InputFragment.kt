@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.github.andrewhossam.udacitysession2.SharedViewModel
 import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
@@ -32,7 +31,7 @@ class InputFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.editTextTextPersonName.doAfterTextChanged {
-            sharedViewModel.inputTextLive.value = it.toString()
+            sharedViewModel.updateText(it.toString())
         }
     }
 }
