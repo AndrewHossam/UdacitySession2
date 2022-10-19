@@ -5,17 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.github.andrewhossam.udacitysession2.R
+import com.github.andrewhossam.udacitysession2.databinding.FragmentOutputBinding
 
 class OutputFragment : Fragment() {
 
     private lateinit var viewModel: OutputViewModel
 
+    private lateinit var binding: FragmentOutputBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_output, container, false)
+    ): View {
+        binding = FragmentOutputBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 }

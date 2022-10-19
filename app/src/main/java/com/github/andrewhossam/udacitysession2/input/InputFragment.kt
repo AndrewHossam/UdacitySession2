@@ -5,19 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.github.andrewhossam.udacitysession2.R
+import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
 
     private lateinit var viewModel: InputViewModel
+    private lateinit var binding: FragmentInputBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_input, container, false)
+    ): View {
+        binding = FragmentInputBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+    }
 }
