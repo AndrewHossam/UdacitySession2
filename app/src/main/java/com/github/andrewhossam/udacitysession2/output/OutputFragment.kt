@@ -12,7 +12,6 @@ import com.github.andrewhossam.udacitysession2.input.InputViewModel
 class OutputFragment : Fragment() {
 
     private val viewModel: OutputViewModel by viewModels()
-    private val inputViewModel: InputViewModel by viewModels()
 
     private lateinit var binding: FragmentOutputBinding
 
@@ -25,6 +24,5 @@ class OutputFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        inputViewModel.helloInputViewModel()
     }
 }
