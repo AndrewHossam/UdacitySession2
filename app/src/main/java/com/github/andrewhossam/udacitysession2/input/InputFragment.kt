@@ -6,15 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
 
-//    private val viewModel: InputViewModel by lazy {
-//        ViewModelProvider(this).get(InputViewModel::class.java)
-//    }
+    private val viewModel: InputViewModel by lazy {
+        ViewModelProvider(this).get(InputViewModel::class.java)
+    }
 
-    private val viewModel: InputViewModel by viewModels()
+//    private val viewModel: InputViewModel by viewModels()
     private lateinit var binding: FragmentInputBinding
 
     override fun onCreateView(
