@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.github.andrewhossam.udacitysession2.R
 import com.github.andrewhossam.udacitysession2.SharedViewModel
 import com.github.andrewhossam.udacitysession2.databinding.FragmentInputBinding
 
@@ -25,7 +27,9 @@ class InputFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentInputBinding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_input, container, false)
+        binding.sharedViewModel = sharedViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 

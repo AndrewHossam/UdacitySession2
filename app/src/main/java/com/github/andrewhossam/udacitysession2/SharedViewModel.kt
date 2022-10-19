@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class SharedViewModel : ViewModel() {
-    private val _inputTextLiveDate = MutableLiveData<String>()
+     val _inputTextLiveDate = MutableLiveData<String>()
     val inputTextLiveData : LiveData<String>
         get() = _inputTextLiveDate
 
